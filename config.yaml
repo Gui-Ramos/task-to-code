@@ -1,3 +1,4 @@
+# Configurações do Jira
 jira:
   task_patterns:
     - name: "feature"
@@ -19,8 +20,8 @@ jira:
         - name: "Comportamento Esperado"
           required: true
 
+# Configurações do GitHub
 github:
-  repository: "seu-usuario/seu-repositorio"
   base_branch: "main"
   pr_template: |
     ## Descrição
@@ -33,12 +34,14 @@ github:
     Projeto: {project}
     Jira: {jira_key}
 
+# Configurações do OpenRouter (IA)
 openrouter:
-  api_key: "${OPENROUTER_API_KEY}"
-  model: "openrouter/deepseek/deepseek-chat-v3-0324:free"
+  # model: "openrouter/deepseek/deepseek-chat-v3-0324:free"
+  model: "deepseek/deepseek-chat"
   temperature: 0.7
   base_url: "https://openrouter.ai/api/v1"
 
+# Configurações do Aider
 aider:
   prompt_template: |
     Analise a seguinte task do Jira e sugira as alterações necessárias no código:
@@ -49,9 +52,10 @@ aider:
     
     Requisitos:
     {requirements}
-    
-    Por favor, realize qualquer alteração ou criação de código necessárias para implementar esta task no projeto {project}.
 
+    Por favor, realize qualquer alteração ou criação de código necessárias para implementar esta task.
+
+# Configurações dos Projetos
 projects:
   BMS:
     directory: "C:\\Users\\guilh\\OneDrive\\Documentos\\Personal-Workspace\\boilerplate-microservice-spring"
@@ -60,6 +64,8 @@ projects:
   PROJ2:
     directory: "projetos/projeto2"
     description: "Projeto 2 - Sistema de Estoque"
+    repository: "seu-usuario/projeto2"
   PROJ3:
     directory: "projetos/projeto3"
-    description: "Projeto 3 - Sistema de RH" 
+    description: "Projeto 3 - Sistema de RH"
+    repository: "seu-usuario/projeto3" 
